@@ -14,7 +14,6 @@ def RandomMatrixGenerator(seed , BaseNodes):
     random.seed(seed)
     BaseMatrix = np.zeros((NumberOfBaseNodes,NumberOfBaseNodes) , dtype=int)
     ConectionVector = np.random.randint(2,4,(NumberOfBaseNodes))
-    print(ConectionVector)
 
     """
     Each node selects one node from the nodes not selected and one random node 
@@ -25,8 +24,6 @@ def RandomMatrixGenerator(seed , BaseNodes):
     RemainingNodes = set([i for i in range(NumberOfBaseNodes)])
     PreviousNode = 0
     for i , n in enumerate(ConectionVector):
-        print(PreviousNode)
-        
         if i == NumberOfBaseNodes - 1: # this is to make sure that the graph is fully connected
             BaseMatrix[PreviousNode,0] = 1
             continue
